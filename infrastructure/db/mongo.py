@@ -14,11 +14,11 @@ class MongoDatabaseConnector:
       try:
         cls._instance = MongoClient(settings.DATABASE_HOST, server_api=ServerApi('1'))
       except ConnectionFailure as e:
-        logger.error(f"Couldn't connect to the database: {e!s}")
+        logger.error(f"[MongoDB] Couldn't connect to the database: {e!s}")
 
         raise
 
-    logger.info(f"Connection to MongoDB with URI successful: {settings.DATABASE_HOST}")
+    logger.info(f"[MongoDB] Connection to MongoDB successful.")
 
     return cls._instance
 

@@ -1,7 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
-# TODO: change the config according to our project
 class Settings(BaseSettings):
   model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
@@ -11,8 +9,8 @@ class Settings(BaseSettings):
   DATASET_ID: str = "YOUR_DATASET_ID"
 
   # MongoDB database
-  DATABASE_HOST: str = "YOUR_MONGODB_HOST"
-  DATABASE_NAME: str = "prompt-2-program"
+  DATABASE_HOST: str = "YOUR_MONGODB_DATABASE_HOST"
+  DATABASE_NAME: str = "YOUR_MONGODB_DATABASE_NAME"
 
   # Qdrant vector database
   USE_QDRANT_CLOUD: bool = True
@@ -20,14 +18,14 @@ class Settings(BaseSettings):
   QDRANT_DATABASE_PORT: int = 6333
   QDRANT_CLOUD_URL: str = "YOUR_QDRANT_CLOUD_URL"
   QDRANT_APIKEY: str | None = "YOUR_QDRANT_API_KEY"
-  # --- Optional settings used to tweak the code. ---
 
+  # --- Optional settings used to tweak the code. ---
   OLLAMA_CLIENT_HOST: str = "http://localhost:11434"
 
   # RAG
   TEXT_EMBEDDING_MODEL_ID: str = "sentence-transformers/all-MiniLM-L6-v2"
   RERANKING_CROSS_ENCODER_MODEL_ID: str = "cross-encoder/ms-marco-MiniLM-L-4-v2"
-  RAG_MODEL_DEVICE: str = "cpu"
+  RAG_MODEL_DEVICE: str = "gpu"
 
   HF_MODEL_ID: str = "YOUR_HF_MODEL_ID"
 

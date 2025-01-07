@@ -43,11 +43,11 @@ class BaseSeleniumCrawler(BaseCrawler, ABC):
       options=options,
     )
 
-  def set_extra_driver_options(self, options: Options) -> None:
-    pass
+  # def set_extra_driver_options(self, options: Options) -> None:
+  #   pass
 
-  def login(self) -> None:
-    pass
+  # def login(self) -> None:
+  #   pass
 
   def scroll_page(self) -> None:
 

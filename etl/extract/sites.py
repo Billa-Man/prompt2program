@@ -31,7 +31,7 @@ def extract_links(url):
         return links
 
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching {url}: {e}")
+        print(f"[Sites] Error fetching {url}: {e}")
         return set()
 
 
@@ -48,7 +48,7 @@ def dfs_crawl(url, visited, domain, depth=0, max_depth=2):
         return
 
     visited.add(url)
-    print(f"Crawling URL: {url}")
+    print(f"[Sites] Crawling URL: {url}")
 
     links = extract_links(url)
 
@@ -71,6 +71,6 @@ def crawl_website(start_url):
 
 if __name__ == "__main__":
     url = "https://en.cppreference.com/"
-    print(f"Starting crawl at {url}...\n")
+    print(f"[Sites] Starting crawl at {url}...\n")
     visited_links = crawl_website(url)
-    print(f"\nCrawled {len(visited_links)} links within the domain.")
+    print(f"\n[Sites] Crawled {len(visited_links)} links within the domain.")

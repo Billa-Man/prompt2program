@@ -12,10 +12,10 @@ class SiteCrawler(BaseCrawler):
     def extract(self, link: str, **kwargs) -> None:
         old_doc = self.site_doc.find(link=link)
         if old_doc is not None:
-            logger.info(f"Site already exists in the database: {link}")
+            logger.info(f"[Site Crawler] Site already exists in the database: {link}")
             return
         
-        logger.info(f"Starting scrapping URL: {link}")
+        logger.info(f"[Site Crawler] Starting scrapping URL: {link}")
 
         response = requests.get(link)
 
@@ -48,4 +48,4 @@ class SiteCrawler(BaseCrawler):
         except Exception:
             raise
 
-        logger.info(f"Finished scraping URL: {link}")
+        logger.info(f"[Site Crawler] Finished scraping URL: {link}")
