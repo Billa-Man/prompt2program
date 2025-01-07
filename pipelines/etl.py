@@ -11,10 +11,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 site_crawler = SiteCrawler()
 
-pipe = PipelineController(
-    name="ETL", project="prompt2program", version="1.0.0",
-    repo="",
-)
+pipe = PipelineController(name="ETL", 
+                          project="prompt2program", 
+                          version="1.0.0",
+                          packages=[""],
+                          repo="")
 
 
 # Extract URLs
