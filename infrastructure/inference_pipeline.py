@@ -18,7 +18,7 @@ def call_llm_service(query: str, context: str | None) -> Iterator:
 
   client = Client(host=settings.OLLAMA_CLIENT_HOST)
 
-  stream = client.chat(model=settings.HF_MODEL_ID, messages=[
+  stream = client.chat(model=settings.HUGGINGFACE_MODEL_ID, messages=[
     {
       'role': 'user',
       'content': llm_input,

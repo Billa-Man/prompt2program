@@ -4,6 +4,7 @@ class Settings(BaseSettings):
   model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
   # Huggingface API
+  HUGGINGFACE_USERNAME: str | None = "YOUR_HUGGINGFACE_USERNAME"
   HUGGINGFACE_ACCESS_TOKEN: str | None = "YOUR_HUGGINGFACE_API_KEY"
 
   DATASET_ID: str = "YOUR_DATASET_ID"
@@ -27,7 +28,7 @@ class Settings(BaseSettings):
   RERANKING_CROSS_ENCODER_MODEL_ID: str = "cross-encoder/ms-marco-MiniLM-L-4-v2"
   RAG_MODEL_DEVICE: str = "gpu"
 
-  HF_MODEL_ID: str = "YOUR_HF_MODEL_ID"
+  HUGGINGFACE_MODEL_ID: str = "YOUR_HUGGINGFACE_MODEL_ID"
 
   # OpenAI API
   OPENAI_MODEL_ID: str = "gpt-4o-mini"
