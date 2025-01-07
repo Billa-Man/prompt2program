@@ -1,13 +1,13 @@
 import sys
 import os
 
-from etl.extract.sites import crawl_website
-from etl.extract.site_crawler import SiteCrawler
+from steps.etl.extract.sites import crawl_website
+from steps.etl.extract.site_crawler import SiteCrawler
 from url_links import crawl_urls
 
 from clearml import PipelineController
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 site_crawler = SiteCrawler()
 
