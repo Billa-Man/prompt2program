@@ -2,3 +2,4 @@ prompt2program
 p2p-env
 test.py
 settings.env
+__pycache__/
